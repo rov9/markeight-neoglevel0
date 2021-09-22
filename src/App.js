@@ -14,8 +14,7 @@ var emojiDictionary = {
   "🍡": "Dango",
   "🌮": "Taco",
   "🥑": "Avocado",
-  "🥨": "Pretzel",
-  "🍐 ": "Pear"
+  "🥨": "Pretzel"
 };
 
 var emojisWeKnow = Object.keys(emojiDictionary);
@@ -27,9 +26,12 @@ export default function App() {
     var userInput = event.target.value;
 
     var meaning = emojiDictionary[userInput];
-    if (meaning === undefined) {
+    if (userInput.length === 0) {
+      meaning = "Enter an emoji here";
+    } else if (meaning === undefined) {
       meaning = "We don't have it in our database";
     }
+
     setMeaning(meaning); //react call for output show
   }
 
@@ -45,6 +47,9 @@ export default function App() {
       {/* actual output set by react command*/}
 
       <h3>Emojis We Know</h3>
+      <p style={{ fontWeight: "800px", fontSize: "14px" }}>
+        Click on them to identify
+      </p>
       {emojisWeKnow.map(function (emoji) {
         return (
           <span
