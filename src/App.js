@@ -42,13 +42,14 @@ export default function App() {
   return (
     <div className="App">
       <h1>Know this Food Item?</h1>
+      <h2 style={{ fontSize: "11px" }}>You may enter any below emojis here</h2>
       <input onChange={emojiInputHandler} />
       <h2>{meaning}</h2>
       {/* actual output set by react command*/}
 
       <h3>Emojis We Know</h3>
-      <p style={{ fontWeight: "800px", fontSize: "14px" }}>
-        Click on them to identify
+      <p style={{ fontWeight: "1000px", fontSize: "10px" }}>
+        You may click on them to identify
       </p>
       {emojisWeKnow.map(function (emoji) {
         return (
